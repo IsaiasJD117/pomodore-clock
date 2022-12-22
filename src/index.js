@@ -89,17 +89,15 @@ const BreakTimer = ()=>{
       
     const clock = () => {
         if(play){
-            timeout;
+            return timeout;
         } else {
           clearTimeout(timeout);
         }
     }
       
         React.useEffect(() => {
-        clock()
-        }, [play, timeLeft, timeout]);
-     
-      
+        clock(play, timeLeft, timeout)
+        });
       
     const title = timingType === "SESSION" ? "Session" : "Break";
 
